@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		19CA9F972F1DE8C700A6ECC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19CA9F7D2F1DE8C500A6ECC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19CA9F842F1DE8C500A6ECC3;
+			remoteInfo = SurroundSound;
+		};
+		19CA9FA12F1DE8C700A6ECC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19CA9F7D2F1DE8C500A6ECC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19CA9F842F1DE8C500A6ECC3;
+			remoteInfo = SurroundSound;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19CA9F852F1DE8C500A6ECC3 /* SurroundSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurroundSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19CA9F962F1DE8C700A6ECC3 /* SurroundSoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurroundSoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19CA9FA02F1DE8C700A6ECC3 /* SurroundSoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurroundSoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		19CA9FA82F1DE8C700A6ECC3 /* Exceptions for "SurroundSound" folder in "SurroundSound" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 19CA9F842F1DE8C500A6ECC3 /* SurroundSound */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		19CA9F872F1DE8C500A6ECC3 /* SurroundSound */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				19CA9FA82F1DE8C700A6ECC3 /* Exceptions for "SurroundSound" folder in "SurroundSound" target */,
+			);
+			path = SurroundSound;
+			sourceTree = "<group>";
+		};
+		19CA9F992F1DE8C700A6ECC3 /* SurroundSoundTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SurroundSoundTests;
+			sourceTree = "<group>";
+		};
+		19CA9FA32F1DE8C700A6ECC3 /* SurroundSoundUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SurroundSoundUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19CA9F822F1DE8C500A6ECC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F932F1DE8C700A6ECC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F9D2F1DE8C700A6ECC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19CA9F7C2F1DE8C500A6ECC3 = {
+			isa = PBXGroup;
+			children = (
+				19CA9F872F1DE8C500A6ECC3 /* SurroundSound */,
+				19CA9F992F1DE8C700A6ECC3 /* SurroundSoundTests */,
+				19CA9FA32F1DE8C700A6ECC3 /* SurroundSoundUITests */,
+				19CA9F862F1DE8C500A6ECC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19CA9F862F1DE8C500A6ECC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19CA9F852F1DE8C500A6ECC3 /* SurroundSound.app */,
+				19CA9F962F1DE8C700A6ECC3 /* SurroundSoundTests.xctest */,
+				19CA9FA02F1DE8C700A6ECC3 /* SurroundSoundUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19CA9F842F1DE8C500A6ECC3 /* SurroundSound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19CA9FA92F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSound" */;
+			buildPhases = (
+				19CA9F812F1DE8C500A6ECC3 /* Sources */,
+				19CA9F822F1DE8C500A6ECC3 /* Frameworks */,
+				19CA9F832F1DE8C500A6ECC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				19CA9F872F1DE8C500A6ECC3 /* SurroundSound */,
+			);
+			name = SurroundSound;
+			packageProductDependencies = (
+			);
+			productName = SurroundSound;
+			productReference = 19CA9F852F1DE8C500A6ECC3 /* SurroundSound.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19CA9F952F1DE8C700A6ECC3 /* SurroundSoundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19CA9FAE2F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSoundTests" */;
+			buildPhases = (
+				19CA9F922F1DE8C700A6ECC3 /* Sources */,
+				19CA9F932F1DE8C700A6ECC3 /* Frameworks */,
+				19CA9F942F1DE8C700A6ECC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19CA9F982F1DE8C700A6ECC3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				19CA9F992F1DE8C700A6ECC3 /* SurroundSoundTests */,
+			);
+			name = SurroundSoundTests;
+			packageProductDependencies = (
+			);
+			productName = SurroundSoundTests;
+			productReference = 19CA9F962F1DE8C700A6ECC3 /* SurroundSoundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19CA9F9F2F1DE8C700A6ECC3 /* SurroundSoundUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19CA9FB12F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSoundUITests" */;
+			buildPhases = (
+				19CA9F9C2F1DE8C700A6ECC3 /* Sources */,
+				19CA9F9D2F1DE8C700A6ECC3 /* Frameworks */,
+				19CA9F9E2F1DE8C700A6ECC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19CA9FA22F1DE8C700A6ECC3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				19CA9FA32F1DE8C700A6ECC3 /* SurroundSoundUITests */,
+			);
+			name = SurroundSoundUITests;
+			packageProductDependencies = (
+			);
+			productName = SurroundSoundUITests;
+			productReference = 19CA9FA02F1DE8C700A6ECC3 /* SurroundSoundUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19CA9F7D2F1DE8C500A6ECC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					19CA9F842F1DE8C500A6ECC3 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					19CA9F952F1DE8C700A6ECC3 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 19CA9F842F1DE8C500A6ECC3;
+					};
+					19CA9F9F2F1DE8C700A6ECC3 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 19CA9F842F1DE8C500A6ECC3;
+					};
+				};
+			};
+			buildConfigurationList = 19CA9F802F1DE8C500A6ECC3 /* Build configuration list for PBXProject "SurroundSound" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19CA9F7C2F1DE8C500A6ECC3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 19CA9F862F1DE8C500A6ECC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19CA9F842F1DE8C500A6ECC3 /* SurroundSound */,
+				19CA9F952F1DE8C700A6ECC3 /* SurroundSoundTests */,
+				19CA9F9F2F1DE8C700A6ECC3 /* SurroundSoundUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19CA9F832F1DE8C500A6ECC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F942F1DE8C700A6ECC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F9E2F1DE8C700A6ECC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19CA9F812F1DE8C500A6ECC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F922F1DE8C700A6ECC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19CA9F9C2F1DE8C700A6ECC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19CA9F982F1DE8C700A6ECC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19CA9F842F1DE8C500A6ECC3 /* SurroundSound */;
+			targetProxy = 19CA9F972F1DE8C700A6ECC3 /* PBXContainerItemProxy */;
+		};
+		19CA9FA22F1DE8C700A6ECC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19CA9F842F1DE8C500A6ECC3 /* SurroundSound */;
+			targetProxy = 19CA9FA12F1DE8C700A6ECC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19CA9FAA2F1DE8C700A6ECC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurroundSound/SurroundSound.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SurroundSound/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19CA9FAB2F1DE8C700A6ECC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurroundSound/SurroundSound.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SurroundSound/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		19CA9FAC2F1DE8C700A6ECC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19CA9FAD2F1DE8C700A6ECC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19CA9FAF2F1DE8C700A6ECC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSoundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurroundSound.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SurroundSound";
+			};
+			name = Debug;
+		};
+		19CA9FB02F1DE8C700A6ECC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSoundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurroundSound.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SurroundSound";
+			};
+			name = Release;
+		};
+		19CA9FB22F1DE8C700A6ECC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSoundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SurroundSound;
+			};
+			name = Debug;
+		};
+		19CA9FB32F1DE8C700A6ECC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S636DL5SMP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mainmian.SurroundSoundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SurroundSound;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19CA9F802F1DE8C500A6ECC3 /* Build configuration list for PBXProject "SurroundSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19CA9FAC2F1DE8C700A6ECC3 /* Debug */,
+				19CA9FAD2F1DE8C700A6ECC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19CA9FA92F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19CA9FAA2F1DE8C700A6ECC3 /* Debug */,
+				19CA9FAB2F1DE8C700A6ECC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19CA9FAE2F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSoundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19CA9FAF2F1DE8C700A6ECC3 /* Debug */,
+				19CA9FB02F1DE8C700A6ECC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19CA9FB12F1DE8C700A6ECC3 /* Build configuration list for PBXNativeTarget "SurroundSoundUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19CA9FB22F1DE8C700A6ECC3 /* Debug */,
+				19CA9FB32F1DE8C700A6ECC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19CA9F7D2F1DE8C500A6ECC3 /* Project object */;
+}
