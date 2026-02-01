@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-01-29T00:02:51Z",
+        "event" : "projectCreated",
+        "id" : "965EA74D-EAAD-4672-BA8C-E4C205A52032",
+        "subtitle" : "SurroundSoundClassifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Mustafa Mian",
+  "createdDate" : "2026-01-29T00:02:51Z",
+  "description" : "A sound classifier for study spaces.",
+  "id" : "472E116C-CEE5-42EA-B01D-70FC4AF03E5C",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-01-29T00:02:51Z",
+  "projectName" : "SurroundSoundClassifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "audioClassifier",
+  "title" : "Sound Classification",
+  "version" : "1.1"
+}
