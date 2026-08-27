@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		19B47C7C30400FCD008792CB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19B47C7B30400FC4008792CB /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		19B47C5E30400E2D008792CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		19B47C4C30400E2A008792CB /* SurroundSound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurroundSound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B47C5D30400E2D008792CB /* SurroundSoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurroundSoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B47C6730400E2D008792CB /* SurroundSoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurroundSoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B47C7B30400FC4008792CB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		19B47C4330400E2A008792CB = {
 			isa = PBXGroup;
 			children = (
+				19B47C7B30400FC4008792CB /* README.md */,
 				19B47C4E30400E2A008792CB /* SurroundSound */,
 				19B47C6030400E2D008792CB /* SurroundSoundTests */,
 				19B47C6A30400E2D008792CB /* SurroundSoundUITests */,
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B47C7C30400FCD008792CB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
