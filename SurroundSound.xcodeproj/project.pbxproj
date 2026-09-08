@@ -38,6 +38,7 @@
 		19B47C6F30400E2D008792CB /* Exceptions for "SurroundSound" folder in "SurroundSound" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Audio/AudioClassifier.swift,
 				Info.plist,
 			);
 			target = 19B47C4B30400E2A008792CB /* SurroundSound */;
