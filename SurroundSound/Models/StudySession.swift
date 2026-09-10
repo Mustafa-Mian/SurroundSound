@@ -9,18 +9,16 @@ import Foundation
 import SwiftData
 
 @Model
-final class FocusSession {
-    var id: UUID
-    var startTime: Date
-    var endTime: Date?
-    
-    init(startTime: Date) {
-        self.id = UUID()
-        self.startTime = startTime
-    }
-    
-    var duration: TimeInterval? {
-        guard let endTime else { return nil }
-        return endTime.timeIntervalSince(startTime)
+final class StudySession {
+    @Attribute(.unique) var id: UUID
+    var startedAt: Date
+    var endedAt: Date?
+
+    @Relationship(deleteRule: .cascade, inverse: \SoundEvent.session)
+    var events: [SoundEvent] = []
+
+    init(id: UUID = UUID(), startedAt: Date = .now) {
+        self.id = id
+        self.startedAt = startedAt
     }
 }

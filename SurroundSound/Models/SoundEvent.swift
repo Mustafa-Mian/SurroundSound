@@ -11,28 +11,17 @@ import SwiftData
 
 @Model
 final class SoundEvent {
-    var id: UUID
-    var category: String
-    
-    var startTime: Date
-    var endTime: Date
-    
-    var averageConfidence: Double
-    
-    init(
-        category: SoundClass,
-        startTime: Date,
-        endTime: Date,
-        averageConfidence: Double
-    ) {
-        self.id = UUID()
-        self.category = category.rawValue
-        self.startTime = startTime
-        self.endTime = endTime
-        self.averageConfidence = averageConfidence
-    }
-    
-    var duration: TimeInterval {
-        endTime.timeIntervalSince(startTime)
+    @Attribute(.unique) var id: UUID
+    var timestamp: Date
+    var label: String
+    var confidence: Double
+    var session: StudySession?
+
+    init(id: UUID = UUID(), timestamp: Date, label: String, confidence: Double, session: StudySession? = nil) {
+        self.id = id
+        self.timestamp = timestamp
+        self.label = label
+        self.confidence = confidence
+        self.session = session
     }
 }
