@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
+	<string>SurroundSound needs access to the Microphone to record your surroundings. Audio data stays on your device and is deleted immeadiately after use.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

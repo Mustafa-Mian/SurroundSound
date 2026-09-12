@@ -13,12 +13,13 @@ final class StudySession {
     @Attribute(.unique) var id: UUID
     var startedAt: Date
     var endedAt: Date?
-
-    @Relationship(deleteRule: .cascade, inverse: \SoundEvent.session)
-    var events: [SoundEvent] = []
+    
+    @Relationship(deleteRule: .cascade, inverse: \SoundBlock.session)
+    var blocks: [SoundBlock] = []
 
     init(id: UUID = UUID(), startedAt: Date = .now) {
         self.id = id
         self.startedAt = startedAt
     }
 }
+

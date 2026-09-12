@@ -14,6 +14,6 @@ struct SurroundSoundApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(PersistenceController.shared)
+        .modelContainer(for: [StudySession.self, SoundBlock.self, SoundEvent.self, Item.self])
     }
 }
