@@ -24,6 +24,8 @@ final class SoundOrchestrator: ObservableObject {
     // State
     @Published private(set) var isRecording = false
     @Published private(set) var recentBlocks: [SoundBlock] = []
+    @Published private(set) var currentLabel: String = "—"
+    @Published private(set) var currentConfidence: Double = 0
 
     // Aggregation state for building contiguous blocks
     private struct BlockState {
@@ -56,9 +58,9 @@ final class SoundOrchestrator: ObservableObject {
     }
 
     // MARK: - Control
-    private func beginNewSession() {
+    private func beginNewSession(name: String) {
         // Always create a fresh session on start
-        let session = StudySession()
+        let session = StudySession(name: name)
         self.activeSession = session
 
         if let ctx = modelContext {
@@ -70,11 +72,13 @@ final class SoundOrchestrator: ObservableObject {
         }
     }
 
-    func start() throws {
+    func start(name: String) throws {
         // Begin a new session and reset aggregation
-        beginNewSession()
+        beginNewSession(name: name)
         try classifier.startRecording()
         resetAggregation()
+        currentLabel = "—"
+        currentConfidence = 0
         isRecording = true
     }
 
@@ -82,9 +86,12 @@ final class SoundOrchestrator: ObservableObject {
         classifier.stopRecording()
         finalizeCurrentBlock()
         isRecording = false
+        currentLabel = "—"
+        currentConfidence = 0
 
         // Mark the active session as ended
         activeSession?.endedAt = Date()
+        activeSession?.calcFocusScore()
 
         if let ctx = modelContext {
             do {
@@ -115,6 +122,13 @@ final class SoundOrchestrator: ObservableObject {
     }
 
     private func handleAggregation(for event: AudioClassificationEvent) {
+        if event.confidence < 0.7 {
+            return
+        }
+        
+        currentLabel = event.label
+        currentConfidence = event.confidence
+
         // We treat consecutive events with the same label as a single contiguous block
         let eventEnd = event.timestamp
         let eventStart = event.timestamp.addingTimeInterval(-event.duration)
@@ -169,7 +183,7 @@ final class SoundOrchestrator: ObservableObject {
 
         if let ctx = modelContext {
             ctx.insert(block)
-            print("SoundBlock inserted (pending save): \(block.label) representing \(block.eventCount * 5) seconds of audio from \(block.startedAt) to \(block.endedAt)")
+            print("SoundBlock inserted (pending save): \(block.label) representing \(block.duration) seconds of audio from \(block.startedAt) to \(block.endedAt)")
         } else {
             print("SoundBlock (unsaved) -> \(block.label) [\(block.eventCount) evts] from \(block.startedAt) to \(block.endedAt)")
         }
@@ -178,3 +192,4 @@ final class SoundOrchestrator: ObservableObject {
         blockState = nil
     }
 }
+

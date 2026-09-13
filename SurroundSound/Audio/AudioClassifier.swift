@@ -30,7 +30,15 @@ class AudioClassifier: NSObject {
     func startRecording() throws {
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.record, mode: .default)
+        try session.setPreferredSampleRate(44_100)
+        try session.setPreferredInputNumberOfChannels(1)
+        try session.setPreferredIOBufferDuration(0.02)
         try session.setActive(true)
+
+        // Log current audio route for debugging
+        let route = session.currentRoute
+        let inputNames = route.inputs.map(\.portName).joined(separator: ", ")
+        print("Audio session active. Mode: measurement. Inputs: \(inputNames)")
 
         audioEngine = AVAudioEngine()
         inputBus = AVAudioNodeBus(0)
@@ -42,9 +50,12 @@ class AudioClassifier: NSObject {
 
         let config = MLModelConfiguration()
         let soundClassifier = try SurroundSoundClassifier_1(configuration: config)
+        if let labels = soundClassifier.model.modelDescription.classLabels as? [String] {
+            print("Loaded model labels: \(labels)")
+        } else {
+            print("Loaded model labels: (unavailable)")
+        }
         let request = try SNClassifySoundRequest(mlModel: soundClassifier.model)
-        request.windowDuration = CMTimeMakeWithSeconds(5.0, preferredTimescale: 44_100) // 5 second sound chunks
-        request.overlapFactor = 0.0 // back-to-back snippets, non-overlapping
 
         try streamAnalyzer.add(request, withObserver: self)
 

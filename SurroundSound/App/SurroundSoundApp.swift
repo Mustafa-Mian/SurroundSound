@@ -12,8 +12,8 @@ import SwiftData
 struct SurroundSoundApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
-        .modelContainer(for: [StudySession.self, SoundBlock.self, SoundEvent.self, Item.self])
+        .modelContainer(for: [StudySession.self, SoundBlock.self, SoundEvent.self])
     }
 }
