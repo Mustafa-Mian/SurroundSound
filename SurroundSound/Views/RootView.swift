@@ -1,14 +1,12 @@
-//
 //  RootView.swift
-//  SurroundSound
-//
 
 import SwiftUI
 import SwiftData
 
-/// Places the app can navigate to beyond the live Listen screen.
+// Places the app can navigate to beyond the live Listen screen.
 enum AppRoute: Hashable {
     case history
+    case help
 }
 
 // App entry point. Owns the orchestrator and navigation, and keeps
@@ -18,10 +16,7 @@ struct RootView: View {
     @StateObject private var orchestrator = SoundOrchestrator()
     @State private var path = NavigationPath()
 
-    // Shown once per app launch. Resets naturally on the next cold start
-    // since it's plain @State, not persisted. See WelcomeView.swift's
-    // doc comment if you'd rather show this only on the very first
-    // launch ever.
+    // Shown once per app launch. Resets naturally on the next cold start.
     @State private var showWelcome = true
 
     var body: some View {
@@ -39,11 +34,21 @@ struct RootView: View {
                             }
                             .accessibilityLabel("View history")
                         }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                path.append(AppRoute.help)
+                            } label: {
+                                Image(systemName: "questionmark.circle")
+                            }
+                            .accessibilityLabel("View help")
+                        }
                     }
                     .navigationDestination(for: AppRoute.self) { route in
                         switch route {
                         case .history:
                             HistoryView()
+                        case .help:
+                            HelpView()
                         }
                     }
             }

@@ -5,10 +5,8 @@
 
 import SwiftUI
 
-/// A quiet, horizontally-scrolling strip of the last few classifications
-/// during an active session — enough context to feel responsive without
-/// turning into a running log. Only appears while listening, and only
-/// once there's something to show.
+// A horizontally-scrolling strip of the last few classifications
+// during an active session.
 struct RecentStrip: View {
     let blocks: [SoundBlock]
 

@@ -23,7 +23,7 @@ final class StudySession {
         "Silent": 1.0,
         "Outdoors": 0.7,
         "Music": 0.6,
-        "Keyboard": 0.4,
+        "Keyboard": 0.9,
         "Talking": 0.2,
         "Traffic": 0.2
     ]
@@ -101,8 +101,8 @@ final class StudySession {
 
         let score =
             0.60 * environment +
-            0.25 * consistency +
-            0.15 * confidence
+            0.10 * consistency +
+            0.30 * confidence
 
         studyScore = score * 100
     }

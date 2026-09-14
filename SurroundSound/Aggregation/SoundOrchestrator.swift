@@ -165,6 +165,9 @@ final class SoundOrchestrator: ObservableObject {
 
     private func finalizeCurrentBlock() {
         guard let state = blockState else { return }
+        if state.count < 3 {
+            return
+        }
         let avg = state.confidenceSum / Double(max(state.count, 1))
         let block = SoundBlock(
             label: state.label,

@@ -7,7 +7,7 @@ struct StudySessionRow: View {
     private var consistencyScore: Double { session.calcConsistencyScore() }
     private var confidenceScore: Double { session.calcConfidenceScore() }
     private var studyScore: Double {
-        let score = 0.60 * environmentScore + 0.25 * consistencyScore + 0.15 * confidenceScore
+        let score = 0.60 * environmentScore + 0.10 * consistencyScore + 0.30 * confidenceScore
         return score * 100.0
     }
 

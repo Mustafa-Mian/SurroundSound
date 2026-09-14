@@ -1,13 +1,10 @@
-//
 //  ListeningIndicator.swift
-//  SurroundSound
-//
 
 import SwiftUI
 
-/// An animated, pulsing ring around a central waveform icon that
-/// visually communicates whether the app is actively listening.
-/// Respects Reduce Motion by holding a static state instead of pulsing.
+// An animated, pulsing ring around a central waveform icon that
+// visually communicates whether the app is actively listening.
+// Respects Reduce Motion by holding a static state instead of pulsing.
 struct ListeningIndicator: View {
     let isListening: Bool
 
@@ -43,7 +40,7 @@ struct ListeningIndicator: View {
         .onAppear { pulse = isListening }
         .onChange(of: isListening) { _, newValue in pulse = newValue }
         .accessibilityElement()
-        .accessibilityLabel(isListening ? "Listening" : "Not listening")
+        .accessibilityLabel(isListening ? "Session In Progress" : "No Active Session")
     }
 }
 

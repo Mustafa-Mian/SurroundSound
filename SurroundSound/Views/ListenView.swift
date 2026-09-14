@@ -1,17 +1,17 @@
-//
 //  ListenView.swift
-//  SurroundSound
-//
 
 import SwiftUI
 
-/// The primary "live" screen: shows what's currently being heard and
-/// lets the user start or stop a listening session.
+// The primary "live" screen: shows what's currently being heard and
+// lets the user start or stop a listening session.
 struct ListenView: View {
     @ObservedObject var orchestrator: SoundOrchestrator
 
     @State private var showError = false
     @State private var errorMessage = ""
+
+    @State private var showNameSheet = false
+    @State private var sessionName = ""
 
     var body: some View {
         ScrollView {
@@ -47,12 +47,15 @@ struct ListenView: View {
         } message: {
             Text(errorMessage)
         }
+        .sheet(isPresented: $showNameSheet) {
+            NewSessionSheet(name: $sessionName, onStart: startSession)
+        }
     }
 
     private var controlButton: some View {
-        Button(action: toggleRecording) {
+        Button(action: handlePrimaryAction) {
             Label(
-                orchestrator.isRecording ? "Stop Listening" : "Start Listening",
+                orchestrator.isRecording ? "End Session" : "Start a Session",
                 systemImage: orchestrator.isRecording ? "stop.fill" : "play.fill"
             )
             .font(.headline)
@@ -64,16 +67,23 @@ struct ListenView: View {
         .sensoryFeedback(.impact(weight: .medium), trigger: orchestrator.isRecording)
     }
 
-    private func toggleRecording() {
+    // Stop happens immediately. Start opens the naming sheet first
+    private func handlePrimaryAction() {
         if orchestrator.isRecording {
             orchestrator.stop()
         } else {
-            do {
-                try orchestrator.start(name: "")
-            } catch {
-                errorMessage = error.localizedDescription
-                showError = true
-            }
+            sessionName = ""
+            showNameSheet = true
+        }
+    }
+
+    private func startSession() {
+        let trimmed = sessionName.trimmingCharacters(in: .whitespacesAndNewlines)
+        do {
+            try orchestrator.start(name: trimmed)
+        } catch {
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
 }

@@ -5,9 +5,7 @@
 
 import SwiftUI
 
-/// Displays the current classification label and confidence,
-/// crossfading smoothly whenever the label changes rather than
-/// popping to the new value instantly.
+// Displays the current classification label and confidence.
 struct CurrentClassificationCard: View {
     let label: String
     let confidence: Double
@@ -41,7 +39,7 @@ struct CurrentClassificationCard: View {
     }
 }
 
-/// A thin, color-coded progress bar representing classification confidence.
+// A thin, color-coded progress bar representing classification confidence.
 private struct ConfidenceMeter: View {
     let value: Double // 0...1
 
