@@ -13,6 +13,7 @@ struct ListenView: View {
     @State private var showNameSheet = false
     @State private var sessionName = ""
 
+    // Mirrors orchestrator.lastCompletedSession.
     @State private var completedSession: StudySession?
 
     var body: some View {
@@ -96,11 +97,13 @@ struct ListenView: View {
 
     private func startSession() {
         let trimmed = sessionName.trimmingCharacters(in: .whitespacesAndNewlines)
-        do {
-            try orchestrator.start(name: trimmed)
-        } catch {
-            errorMessage = error.localizedDescription
-            showError = true
+        Task { @MainActor in
+            do {
+                try await orchestrator.start(name: trimmed)
+            } catch {
+                errorMessage = error.localizedDescription
+                showError = true
+            }
         }
     }
 }

@@ -26,6 +26,9 @@ final class SoundOrchestrator: ObservableObject {
     @Published private(set) var recentBlocks: [SoundBlock] = []
     @Published private(set) var currentLabel: String = "—"
     @Published private(set) var currentConfidence: Double = 0
+
+    // The session that just finished, so the UI can present its
+    // details right after `stop()`.
     @Published private(set) var lastCompletedSession: StudySession?
 
     // Aggregation state for building contiguous blocks
@@ -73,10 +76,13 @@ final class SoundOrchestrator: ObservableObject {
         }
     }
 
-    func start(name: String) throws {
-        // Begin a new session and reset aggregation
+    func start(name: String) async throws {
+        // Start recording first — if permission is denied (or anything
+        // else about the engine fails to come up), we never create or
+        // insert a session that would otherwise be left dangling.
+        try await classifier.startRecording()
+
         beginNewSession(name: name)
-        try classifier.startRecording()
         resetAggregation()
         currentLabel = "—"
         currentConfidence = 0
@@ -103,7 +109,8 @@ final class SoundOrchestrator: ObservableObject {
             }
         }
 
-        // Clear the active session after saving
+        // Surface the finished session so the UI can show its details
+        // immediately, then clear the active session.
         lastCompletedSession = activeSession
         activeSession = nil
     }
@@ -119,12 +126,12 @@ final class SoundOrchestrator: ObservableObject {
     }
 
     // MARK: - Aggregation
-    fileprivate func resetAggregation() {
+    private func resetAggregation() {
         blockState = nil
     }
 
-    fileprivate func handleAggregation(for event: AudioClassificationEvent) {
-        if event.confidence < 0.6 {
+    private func handleAggregation(for event: AudioClassificationEvent) {
+        if event.confidence < 0.7 {
             return
         }
         
@@ -165,7 +172,7 @@ final class SoundOrchestrator: ObservableObject {
         }
     }
 
-    fileprivate func finalizeCurrentBlock() {
+    private func finalizeCurrentBlock() {
         guard let state = blockState else { return }
         if state.count < 3 {
             return
@@ -197,24 +204,3 @@ final class SoundOrchestrator: ObservableObject {
         blockState = nil
     }
 }
-
-#if DEBUG
-// MARK: - Test Hooks (DEBUG only)
-extension SoundOrchestrator {
-    /// Inject a synthetic classification event for testing aggregation logic.
-    func _testInject(event: AudioClassificationEvent) {
-        handleAggregation(for: event)
-    }
-
-    /// Force finalize the current block for testing purposes.
-    func _testFinalizeBlock() {
-        finalizeCurrentBlock()
-    }
-
-    /// Reset the internal aggregation state.
-    func _testResetAggregation() {
-        resetAggregation()
-    }
-}
-#endif
-

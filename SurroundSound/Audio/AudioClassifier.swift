@@ -14,6 +14,17 @@ struct AudioClassificationEvent {
     let duration: TimeInterval
 }
 
+enum AudioClassifierError: LocalizedError {
+    case microphonePermissionDenied
+
+    var errorDescription: String? {
+        switch self {
+        case .microphonePermissionDenied:
+            return "Microphone access is required to classify sounds. You can enable it in Settings > Privacy & Security > Microphone."
+        }
+    }
+}
+
 class AudioClassifier: NSObject {
     private var audioEngine: AVAudioEngine!
     private var inputBus: AVAudioNodeBus!
@@ -27,7 +38,13 @@ class AudioClassifier: NSObject {
 
     var recordingStartDate: Date?
 
-    func startRecording() throws {
+    func startRecording() async throws {
+        // Without this, a denied/undetermined permission state leaves
+        // inputNode.inputFormat(forBus:) reporting an invalid (zero
+        // channel) format, which is what was surfacing as OSStatus -50
+        // further down in installTap.
+        try await ensureMicrophonePermission()
+
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.record, mode: .default)
         try session.setPreferredSampleRate(44_100)
@@ -63,6 +80,25 @@ class AudioClassifier: NSObject {
             self?.analysisQueue.async {
                 self?.streamAnalyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
             }
+        }
+    }
+
+    // Checks current mic authorization and, if undetermined, prompts
+    // for it — rather than relying on the audio session to trigger
+    // the system dialog implicitly on activation.
+    private func ensureMicrophonePermission() async throws {
+        switch AVAudioApplication.shared.recordPermission {
+        case .granted:
+            return
+        case .denied:
+            throw AudioClassifierError.microphonePermissionDenied
+        case .undetermined:
+            let granted = await AVAudioApplication.requestRecordPermission()
+            if !granted {
+                throw AudioClassifierError.microphonePermissionDenied
+            }
+        @unknown default:
+            throw AudioClassifierError.microphonePermissionDenied
         }
     }
 
