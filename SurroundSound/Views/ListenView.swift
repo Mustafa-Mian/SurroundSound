@@ -13,6 +13,8 @@ struct ListenView: View {
     @State private var showNameSheet = false
     @State private var sessionName = ""
 
+    @State private var completedSession: StudySession?
+
     var body: some View {
         ScrollView {
             VStack(spacing: 28) {
@@ -49,6 +51,21 @@ struct ListenView: View {
         }
         .sheet(isPresented: $showNameSheet) {
             NewSessionSheet(name: $sessionName, onStart: startSession)
+        }
+        .sheet(item: $completedSession) { session in
+            NavigationStack {
+                StudySessionDetailView(session: session)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                completedSession = nil
+                            }
+                        }
+                    }
+            }
+        }
+        .onChange(of: orchestrator.lastCompletedSession) { _, newSession in
+            completedSession = newSession
         }
     }
 

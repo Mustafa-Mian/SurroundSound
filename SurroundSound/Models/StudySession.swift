@@ -23,7 +23,7 @@ final class StudySession {
         "Silent": 1.0,
         "Outdoors": 0.7,
         "Music": 0.6,
-        "Keyboard": 0.9,
+        "Keyboard": 1.0,
         "Talking": 0.2,
         "Traffic": 0.2
     ]

@@ -93,7 +93,7 @@ struct StudySessionDetailView: View {
 
                 Text(scoreTier.message)
                     .font(.subheadline.weight(.medium))
-                    .foregroundStyle(scoreTier.color)
+                    .foregroundStyle(Color.primary)
 
                 Spacer()
             }

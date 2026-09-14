@@ -34,8 +34,6 @@ struct RecentStrip: View {
 }
 
 #Preview {
-    // Populate with real SoundBlock instances once you're viewing this
-    // in your project — the initializer isn't visible from here.
     RecentStrip(blocks: [])
         .padding()
 }

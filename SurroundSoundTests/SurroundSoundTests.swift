@@ -1,19 +1,20 @@
-//
-//  SurroundSoundTests.swift
-//  SurroundSoundTests
-//
-//  Created by Mustafa Mian on 2026-08-27.
-//
-
+#if canImport(Testing)
 import Testing
 @testable import SurroundSound
 
+@Suite("Basic smoke tests")
 struct SurroundSoundTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-        // Swift Testing Documentation
-        // https://developer.apple.com/documentation/testing
+    @Test func example() throws {
+        #expect(true)
     }
-
 }
+#else
+import XCTest
+@testable import SurroundSound
+
+final class SurroundSoundTests: XCTestCase {
+    func testExample() throws {
+        XCTAssertTrue(true)
+    }
+}
+#endif

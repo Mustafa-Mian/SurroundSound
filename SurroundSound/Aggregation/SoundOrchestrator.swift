@@ -26,6 +26,7 @@ final class SoundOrchestrator: ObservableObject {
     @Published private(set) var recentBlocks: [SoundBlock] = []
     @Published private(set) var currentLabel: String = "—"
     @Published private(set) var currentConfidence: Double = 0
+    @Published private(set) var lastCompletedSession: StudySession?
 
     // Aggregation state for building contiguous blocks
     private struct BlockState {
@@ -103,6 +104,7 @@ final class SoundOrchestrator: ObservableObject {
         }
 
         // Clear the active session after saving
+        lastCompletedSession = activeSession
         activeSession = nil
     }
 
@@ -117,12 +119,12 @@ final class SoundOrchestrator: ObservableObject {
     }
 
     // MARK: - Aggregation
-    private func resetAggregation() {
+    fileprivate func resetAggregation() {
         blockState = nil
     }
 
-    private func handleAggregation(for event: AudioClassificationEvent) {
-        if event.confidence < 0.7 {
+    fileprivate func handleAggregation(for event: AudioClassificationEvent) {
+        if event.confidence < 0.6 {
             return
         }
         
@@ -163,7 +165,7 @@ final class SoundOrchestrator: ObservableObject {
         }
     }
 
-    private func finalizeCurrentBlock() {
+    fileprivate func finalizeCurrentBlock() {
         guard let state = blockState else { return }
         if state.count < 3 {
             return
@@ -195,4 +197,24 @@ final class SoundOrchestrator: ObservableObject {
         blockState = nil
     }
 }
+
+#if DEBUG
+// MARK: - Test Hooks (DEBUG only)
+extension SoundOrchestrator {
+    /// Inject a synthetic classification event for testing aggregation logic.
+    func _testInject(event: AudioClassificationEvent) {
+        handleAggregation(for: event)
+    }
+
+    /// Force finalize the current block for testing purposes.
+    func _testFinalizeBlock() {
+        finalizeCurrentBlock()
+    }
+
+    /// Reset the internal aggregation state.
+    func _testResetAggregation() {
+        resetAggregation()
+    }
+}
+#endif
 

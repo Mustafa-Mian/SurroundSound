@@ -1,5 +1,6 @@
 //
 //  HelpView.swift
+//
 //  How the app works!
 
 import SwiftUI

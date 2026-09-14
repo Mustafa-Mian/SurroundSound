@@ -21,8 +21,6 @@ struct WelcomeView: View {
 
             VStack(spacing: 10) {
 
-                // Replace "AppLogo" with whatever you name the image set
-                // you add to Assets.xcassets for your logo.
                 Image("SurroundSound_Full_Logo")
                     .resizable()
                     .scaledToFit()
