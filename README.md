@@ -1,13 +1,20 @@
-SurroundSound
+Surround Sound
 ---
 
 **BETA TEST HERE:** https://testflight.apple.com/join/NCsH9jBY
+
+<img width="148" height="320" alt="IMG_5120" src="https://github.com/user-attachments/assets/156d9952-68d3-4fbe-8579-610deb6368b1" />
+<img width="148" height="320" alt="IMG_5126" src="https://github.com/user-attachments/assets/a2719547-1f45-4b68-b946-cba7d54518ce" />
+<img width="148" height="320" alt="IMG_5123" src="https://github.com/user-attachments/assets/a1bc7aa5-71f9-48a4-86c3-10ca858755e8" />
+<img width="148" height="320" alt="IMG_5124" src="https://github.com/user-attachments/assets/d8a716ed-98a9-4068-b2f1-6cbd9c50fc38" />
+
+
 (Requires download of Testflight, Apple's Official Beta Testing App)
 This app is currently in the process of being deployed to the iOS App Store!
 
-No matter where I study, it feels like there are constant distractions. People talking, music, and even general outdoor ambience can get loud and prevent me from getting work done. I wondered if I could somehow keep track of all the distractions - Like listing which ones are more common, how many times they show up, and judging if an area is good for studying in general. SurroundSound is my solution to this.
+No matter where I study, it feels like there are constant distractions. People talking, music, and even general outdoor ambience can get loud and prevent me from getting work done. I wondered if I could somehow keep track of all the distractions - Like listing which ones are more common, how many times they show up, and judging if an area is good for studying in general. Surround Sound is my solution to this.
 
-SurroundSound helps you understand your study spaces and figure out where you learn best.
+Surround Sound helps you understand your study spaces and figure out where you learn best.
 
 The iOS app is built using Swift, SwiftUI, and the SwiftData model. The Audio classification is performed by an Apple Core ML audio classification model. The model itself was trained on hand labeled data in the Audio Dataset repo: https://github.com/Mustafa-Mian/AudioDataset
 
@@ -15,4 +22,4 @@ Users to record their study sessions with their device microphone. The machine l
 
 The app is built for privacy. User data never leaves the App. Audio clips are only used in device memory and instantly discarded.
 
-Please give SurroundSound a try! Start studying smarter and discover what is blocking your productivity.
+Please give Surround Sound a try! Start studying smarter and discover what is blocking your productivity.
