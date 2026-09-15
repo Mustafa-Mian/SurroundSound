@@ -1,7 +1,9 @@
-##SurroundSound
+SurroundSound
 ---
 
-**NOTE:** This app is currently in the process of being deployed to the iOS App Store!
+**BETA TEST HERE:** https://testflight.apple.com/join/NCsH9jBY
+(Requires download of Testflight, Apple's Official Beta Testing App)
+This app is currently in the process of being deployed to the iOS App Store!
 
 No matter where I study, it feels like there are constant distractions. People talking, music, and even general outdoor ambience can get loud and prevent me from getting work done. I wondered if I could somehow keep track of all the distractions - Like listing which ones are more common, how many times they show up, and judging if an area is good for studying in general. SurroundSound is my solution to this.
 
