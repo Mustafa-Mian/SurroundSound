@@ -16,11 +16,14 @@ struct AudioClassificationEvent {
 
 enum AudioClassifierError: LocalizedError {
     case microphonePermissionDenied
+    case invalidInputFormat
 
     var errorDescription: String? {
         switch self {
         case .microphonePermissionDenied:
             return "Microphone access is required to classify sounds. You can enable it in Settings > Privacy & Security > Microphone."
+        case .invalidInputFormat:
+            return "Couldn't access the microphone right now. Please try again."
         }
     }
 }
@@ -39,18 +42,23 @@ class AudioClassifier: NSObject {
     var recordingStartDate: Date?
 
     func startRecording() async throws {
-        // Without this, a denied/undetermined permission state leaves
-        // inputNode.inputFormat(forBus:) reporting an invalid (zero
-        // channel) format, which is what was surfacing as OSStatus -50
-        // further down in installTap.
+        // ask mic permission
         try await ensureMicrophonePermission()
 
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.record, mode: .default)
-        try session.setPreferredSampleRate(44_100)
-        try session.setPreferredInputNumberOfChannels(1)
-        try session.setPreferredIOBufferDuration(0.02)
+
+        // Sample rate / buffer duration are just preferences — the tap
+        // below uses whatever format the hardware actually reports, so
+        // a failure here shouldn't stop recording from starting.
+        try? session.setPreferredSampleRate(44_100)
+        try? session.setPreferredIOBufferDuration(0.02)
+
         try session.setActive(true)
+
+        // Per Apple's docs, preferred input channel count must be set
+        // after the session is active
+        try? session.setPreferredInputNumberOfChannels(1)
 
         // Log current audio route for debugging
         let route = session.currentRoute
@@ -59,7 +67,13 @@ class AudioClassifier: NSObject {
 
         audioEngine = AVAudioEngine()
         inputBus = AVAudioNodeBus(0)
-        inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
+        // Right after a *fresh* permission grant specifically, the input
+        // node can briefly still report 0 channels / 0 sample rate while
+        // iOS finishes reconfiguring the route. Retry a couple of times
+        // before giving up, rather than handing that invalid format to
+        // the tap and analyzer below.
+        inputFormat = try await validInputFormat(engine: audioEngine, bus: inputBus)
+
         try audioEngine.start()
         recordingStartDate = Date()
 
@@ -83,9 +97,24 @@ class AudioClassifier: NSObject {
         }
     }
 
-    // Checks current mic authorization and, if undetermined, prompts
-    // for it — rather than relying on the audio session to trigger
-    // the system dialog implicitly on activation.
+    private func validInputFormat(
+        engine: AVAudioEngine,
+        bus: AVAudioNodeBus,
+        attempts: Int = 3
+    ) async throws -> AVAudioFormat {
+        for attempt in 1...attempts {
+            let format = engine.inputNode.inputFormat(forBus: bus)
+            if format.channelCount > 0 && format.sampleRate > 0 {
+                return format
+            }
+            if attempt < attempts {
+                try await Task.sleep(nanoseconds: 300_000_000) // 0.3s
+            }
+        }
+        throw AudioClassifierError.invalidInputFormat
+    }
+
+    // Checks current mic authorization and, if undetermined, prompts for it.
     private func ensureMicrophonePermission() async throws {
         switch AVAudioApplication.shared.recordPermission {
         case .granted:
