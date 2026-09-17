@@ -3,6 +3,8 @@ Surround Sound
 
 **BETA TEST HERE:** https://testflight.apple.com/join/NCsH9jBY
 
+^ Works on iOS, MacOS, iPadOS
+
 <img width="148" height="320" alt="IMG_5120" src="https://github.com/user-attachments/assets/156d9952-68d3-4fbe-8579-610deb6368b1" />
 <img width="148" height="320" alt="IMG_5126" src="https://github.com/user-attachments/assets/a2719547-1f45-4b68-b946-cba7d54518ce" />
 <img width="148" height="320" alt="IMG_5123" src="https://github.com/user-attachments/assets/a1bc7aa5-71f9-48a4-86c3-10ca858755e8" />
